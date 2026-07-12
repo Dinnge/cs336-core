@@ -538,7 +538,7 @@ def run_load_checkpoint(
     """
     raise NotImplementedError
 
-
+from cs336_basics.Tokenizer import Tokenizer
 def get_tokenizer(
     vocab: dict[int, bytes],
     merges: list[tuple[bytes, bytes]],
@@ -559,9 +559,11 @@ def get_tokenizer(
     Returns:
         A BPE tokenizer that uses the provided vocab, merges, and special tokens.
     """
+    return Tokenizer(vocab, merges, special_tokens)
     raise NotImplementedError
 
 
+from cs336_basics.BPE_Tokenizer import BPE_Tokenizer
 def run_train_bpe(
     input_path: str | os.PathLike,
     vocab_size: int,
@@ -589,4 +591,5 @@ def run_train_bpe(
                 representing that <token1> was merged with <token2>.
                 Merges are ordered by order of creation.
     """
-    raise NotImplementedError
+    vocab, merges = BPE_Tokenizer(str(input_path), vocab_size, special_tokens)
+    return vocab, merges

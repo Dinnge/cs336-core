@@ -161,3 +161,14 @@ cython_debug/
 
 .ruff_cache/
 *.zip
+
+# Large dataset files (>100MB GitHub limit)
+tests/fixtures/TinyStoriesV2-GPT4-train.txt
+tests/fixtures/TinyStoriesV2-GPT4-valid.txt
+
+# Debug and temp files
+debug*.txt
+debug*.py
+test_out*.txt
+merges.txt
+merges_tinystory.txt
